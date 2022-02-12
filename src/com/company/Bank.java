@@ -15,4 +15,8 @@ public class Bank {
      * Переменая содержащая список объектов аккаунтов банка
      */
     private  ArrayList<Account> accounts;
+
+    public String getNewUserUUID() {
+
+    }
 }

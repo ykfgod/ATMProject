@@ -28,7 +28,11 @@ public class User {
     private ArrayList<Account> accounts;
 
     /**
-     * Создание конструктора для User
+     * Создание нового пользователя
+     * @param firstName имя пользьвателя
+     * @param lastName фамилия пользьвателя
+     * @param pin пинкод для аккаунта пользьвателя
+     * @param theBank объект банка в котором появился опльзователь
      */
     public User (String firstName, String lastName, String pin, Bank theBank){
 
@@ -36,7 +40,7 @@ public class User {
         this.firstName = firstName;
         this.lastName = lastName;
 
-        // Сокрытие пинкода MD5 has, для безопасности
+        // Сокрытие пинкода MD5 Hash, для безопасности
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
             this.pinHash = md.digest(pin.getBytes());
@@ -45,5 +49,15 @@ public class User {
             e.printStackTrace();
             System.exit(1);
         }
+
+        // Получение нового уникального ID для пользователя
+        this.uuid = theBank.getNewUserUUID();
+
+        // Создание пустого списка аккаунтов
+        this.accounts = new ArrayList<Account>();
+
+        // Вывод сообщения в консоль
+        System.out.printf("Новый пользователь %s, %s с ID %s создан.\n",
+                lastName, firstName, uuid);
     }
 }
