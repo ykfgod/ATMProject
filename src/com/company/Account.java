@@ -40,7 +40,7 @@ public class Account {
         this.transactions = new ArrayList<Transaction>();
 
         // Добавление к владельцу и банку списков
-        holder.addAcount(this);
+        holder.addAccount(this);
         theBank.addAccount(this);
     }
 }

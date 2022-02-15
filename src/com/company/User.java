@@ -60,4 +60,12 @@ public class User {
         System.out.printf("Новый пользователь %s, %s с ID %s создан.\n",
                 lastName, firstName, uuid);
     }
+
+    /**
+     * Создание аккаунта для пользователя
+     * @param anAcct - аккаунт для добавления
+     */
+    public void addAccount (Account anAcct) {
+        this.accounts.add(anAcct);
+    }
 }
