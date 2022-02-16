@@ -18,6 +18,22 @@ public class Bank {
     private  ArrayList<Account> accounts;
 
     /**
+     *  Конструктор для создания объекта Bank с пустым литом
+     *  пользователей и аккаунтов
+     * @param name - название банка
+     */
+    public  Bank(String name) {
+
+        this.name= name;
+        this.user = new ArrayList<User>();
+        this.accounts = new ArrayList<Account>();
+    }
+
+    public void addAccount (Account anAcct) {
+        this.accounts.add(anAcct);
+    }
+
+    /**
      * Генерация уникального универсального ID для пользователя
      * @return uuid
      */
