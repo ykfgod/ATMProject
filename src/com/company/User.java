@@ -76,4 +76,24 @@ public class User {
     public String getUUID () {
         return  this.uuid;
     }
+
+    /**
+     * Проверка, соответствует ли данный pin истинному
+     * pin пользователся
+     * @param aPin pin на проверку
+     * @return является ли пинкод действительным или нет
+     */
+    public  boolean validatePin(String aPin) {
+
+        try {
+            MessageDigest rd = MessageDigest.getInstance("MD5");
+            return MessageDigest.isEqual(rd.digest(aPin.getBytes()), this.pinHash);
+        } catch (NoSuchAlgorithmException e) {
+            System.err.print("Ошибка, нет криптографического алгоритма MD5");
+            e.printStackTrace();
+            System.exit(1);
+        }
+
+        return false;
+    }
 }
