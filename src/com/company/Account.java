@@ -39,9 +39,6 @@ public class Account {
         // Инициализация транзакций
         this.transactions = new ArrayList<Transaction>();
 
-        // Добавление к владельцу и банку списков
-        holder.addAccount(this);
-        theBank.addAccount(this);
     }
 
     /**
