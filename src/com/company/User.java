@@ -68,4 +68,12 @@ public class User {
     public void addAccount (Account anAcct) {
         this.accounts.add(anAcct);
     }
+
+    /**
+     * Метод возврата UUID пользователя
+     * @return uuid
+     */
+    public String getUUID () {
+        return  this.uuid;
+    }
 }

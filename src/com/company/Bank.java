@@ -37,7 +37,7 @@ public class Bank {
             }
 
             nonUnique = false;
-            for (User u : this.users) {
+            for (User u : this.user) {
                  if (uuid.compareTo(u.getUUID()) == 0) {
                     nonUnique = true;
                     break;
@@ -49,11 +49,33 @@ public class Bank {
     }
 
     /**
-     *
-     * @return
+     * Генерация уникального универсального ID для аккаутна
+     * @return uuid
      */
     public String getNewAccountUUID() {
+        String uuid;
+        Random rng = new Random();
+        int len = 10;
+        boolean nonUnique;
 
+        // цикл пока не получится уникальный ID
+        do {
+            uuid = "";
+            for (int c = 0; c < len; c++) {
+                uuid += ((Integer)rng.nextInt(10)).toString();
+
+            }
+
+            nonUnique = false;
+            for (Account a : this.accounts) {
+                if (uuid.compareTo(a.getUUID()) == 0) {
+                    nonUnique = true;
+                    break;
+                }
+            }
+        } while (nonUnique);
+
+        return uuid;
     }
 
     /**
