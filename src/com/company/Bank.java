@@ -94,7 +94,6 @@ public class Bank {
         return uuid;
     }
 
-
     /**
      * Создание нового юзера банка
      * @param firstName Имя юзера
@@ -139,5 +138,13 @@ public class Bank {
            // если не найден пользователь или введен не корректный
            // пинкод возвращаем пусто значение.
            return  null;
+    }
+
+    /**
+     * Получение имени банка
+     * @return - имя банка
+     */
+    public String getName () {
+        return  this.name;
     }
 }

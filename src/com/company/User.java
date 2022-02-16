@@ -57,7 +57,7 @@ public class User {
         this.accounts = new ArrayList<Account>();
 
         // Вывод сообщения в консоль
-        System.out.printf("Новый пользователь %s, %s с ID %s создан.\n",
+        System.out.printf("Новый пользователь %s %s с ID %s создан.\n",
                 lastName, firstName, uuid);
     }
 
